@@ -40,6 +40,7 @@ class _DicePageState extends State<DicePage> {
                 leftDiceNumber = Random().nextInt(6) + 1;
                 rightDiceNumber = Random().nextInt(6) + 1;
                 print('diceNumber=$leftDiceNumber');
+                print('diceNumber=$rightDiceNumber');
               });
             },
           ),
@@ -52,6 +53,7 @@ class _DicePageState extends State<DicePage> {
                 rightDiceNumber = Random().nextInt(6) + 1;
                 leftDiceNumber = Random().nextInt(6) + 1;
                 print('diceNumber=$rightDiceNumber');
+                print('diceNumber=$leftDiceNumber');
               });
             },
           ),
