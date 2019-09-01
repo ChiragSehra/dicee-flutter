@@ -5,10 +5,10 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.red,
         appBar: AppBar(
           title: Text('Dicee'),
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.blueGrey,
         ),
         body: DicePage(),
       ),
@@ -25,7 +25,12 @@ class _DicePageState extends State<DicePage> {
   var leftDiceNumber = 1;
   var rightDiceNumber = 1;
 
-  void changeDiceFace() {}
+  void changeDiceFace() {
+    rightDiceNumber = Random().nextInt(6) + 1;
+    leftDiceNumber = Random().nextInt(6) + 1;
+    print('diceNumber=$rightDiceNumber');
+    print('diceNumber=$leftDiceNumber');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +42,7 @@ class _DicePageState extends State<DicePage> {
             onPressed: () {
               //void callback
               setState(() {
-                leftDiceNumber = Random().nextInt(6) + 1;
-                rightDiceNumber = Random().nextInt(6) + 1;
-                print('diceNumber=$leftDiceNumber');
-                print('diceNumber=$rightDiceNumber');
+                changeDiceFace();
               });
             },
           ),
@@ -50,10 +52,7 @@ class _DicePageState extends State<DicePage> {
             child: Image.asset('images/dice$rightDiceNumber.png'),
             onPressed: () {
               setState(() {
-                rightDiceNumber = Random().nextInt(6) + 1;
-                leftDiceNumber = Random().nextInt(6) + 1;
-                print('diceNumber=$rightDiceNumber');
-                print('diceNumber=$leftDiceNumber');
+                changeDiceFace();
               });
             },
           ),
